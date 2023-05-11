@@ -59,7 +59,7 @@ with set of contexts \(\mathbf{C_w}\) for word \(w\), contexts \(c\) and context
 	\underbrace{\mathbf{Y}}_{n\times D}&=\underbrace{\mathbf{X}}_{n\times p + 1} \underbrace{\mathbf{\beta}}_{p+1 \times D} + \underbrace{\mathbf{E}}_{n\times D}
 \end{align}
 
-- Let's consider an easy example with just two groups: We want to distinguish the meaning of term $w$ across group $A$ and $B$, where our covariate $\mathbf{X}$ is just a dummy for whether group is $A$ or not:
+- Let's consider an easy example with just two groups: We want to distinguish the meaning of term $w$ across group $A$ and $B$, where our covariate $\mathbf{X}$ is just a dummy for whether group is $B$ or not:
 
 \begin{align}
 	\mathbb{E}[\mathbf{Y} | A]&=\mathbf{A}\mathbf{v_{w|A}^{additive}} = \mathbf{v_{w|A}} = \mathbf{\beta_0}

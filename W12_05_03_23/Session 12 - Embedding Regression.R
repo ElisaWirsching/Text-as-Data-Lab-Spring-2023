@@ -24,10 +24,11 @@ pacman::p_load(conText,
 
 # great paper: https://www.cambridge.org/core/journals/american-political-science-review/article/embedding-regression-models-for-contextspecific-description-and-inference/4C90013E5C714C8483ED95CC699022FB
 
-# what are a-la-carte embeddings?
+# what are a la carte embeddings?
 # what is the purpose of embedding regressions?
 
-# Pedro wrote an amazing package (conText) which allows us to implement ALC embeddings and embedding regression
+# Pedro Rodriguez wrote an amazing package (conText) which allows us to implement 
+# ALC embeddings and embedding regression
 # We use most of his intro vignette for lab
 
 ############################
@@ -83,7 +84,9 @@ toks_nostop_feats <- tokens_select(toks_nostop,
 # suppose we are interested in differences of the term "immigration" across parties
 
 # build a tokenized corpus of contexts surrounding the target term "immigration"
-immig_toks <- tokens_context(x = toks_nostop_feats, pattern = "immigr*", window = 6L)
+immig_toks <- tokens_context(x = toks_nostop_feats, 
+                             pattern = "immigr*", 
+                             window = 6L)
 head(immig_toks)
 length(immig_toks)
 head(docvars(immig_toks), 3)
@@ -115,7 +118,8 @@ head(immig_dem)
 # we can simply take the column-average of the single-instance ALC embeddings
 
 # to get a single "corpus-wide" embedding, take the column average
-immig_wv <- matrix(colMeans(immig_dem), ncol = ncol(immig_dem)) %>%  `rownames<-`("immigration")
+immig_wv <- matrix(colMeans(immig_dem), 
+                   ncol = ncol(immig_dem)) %>%  `rownames<-`("immigration")
 dim(immig_wv)
 immig_wv
 
